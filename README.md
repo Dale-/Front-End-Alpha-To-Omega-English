@@ -43,10 +43,10 @@
 ---
 
 
-### 由此开始
-* Internet Actually Work
+### Start Here
+* [📖 How the Internet Works?](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_does_the_Internet_work)  **|** [📹 video](https://www.youtube.com/watch?v=7_LPdttKXPc)
 * Front End & Back End
-* HTTP
+* What is HTTP?
 * How browsers works
 
 ### HTML
