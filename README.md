@@ -46,7 +46,7 @@
 ### Start Here
 * [📖 How the Internet Works?](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_does_the_Internet_work)  **|** [📹 video](https://www.youtube.com/watch?v=7_LPdttKXPc)
 * Front End & Back End
-* What is HTTP?
+* [What is HTTP?](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
 * How browsers works
 
 ### HTML
