@@ -84,41 +84,71 @@
 
 ### [Security](https://github.com/thedaviddias/Front-End-Checklist#security)
 * **HTTPS**
+  
    HTTPS is used on every pages and for all external content (plugins, images...).
+
 * **HTTP Strict Transport Security (HSTS)**
+  
    The HTTP header is set to 'Strict-Transport-Security'.'Strict-Transport-Security'
+
 * **Cross Site Request Forgery (CSRF)**
+  
   You ensure that requests made to your server-side are legitimate and originate from your website / app to prevent CSRF attacks.
+
 * **Cross Site Scripting (XSS)**
+  
   Your page or website is free from XSS possible issues.
+
 * **Content Type Options**
+  
   Prevents Google Chrome and Internet Explorer from trying to mime-sniff the content-type of a response away from the one being declared by the server.
+
 * **X-Frame-Options (XFO)**
+  
   Protects your visitors against clickjacking attacks.
+
 * **Content Security Policy**
+  
   Defines how content is loaded on your site and from where it is permitted to be loaded. Can also be used to protect against clickjacking attacks.
 
 
 ### Performance
 * **Add long-term headers expiration dates**
+  
   Near-future headers expiration dates prevent effective caching and cause a repeat visit to your site from the device to be slower than necessary.
+
 * **Make fewer HTTP requests**  
+  
   Latency has a substantial impact on mobile application performance. Reducing the number of unique objects on the page will help reduce sensitivity to latency.
+
 * **Remove duplicate JavaScript and CSS**
+  
   Evaluating redundant scripts wastes time—and the duplicate parsing happens even if the script is cacheable. Duplicate scripts also waste mobile bandwidth.
+
 * **Avoid HTTP 404 (Not Found) error**  
+  
   Making an HTTP request and receiving a 404 (Not Found) error is expensive and degrades the user experience. Some sites have helpful 404 messages (for example, "Did you mean...?"), which may assist the user, but server resources are still wasted.
+
 * **Goals to achieve**
+  
   * First Meaningful Paint under 1 second
   * Time To Interactive under 5 seconds for the "average" configuration (a $200 Android on a slow 3G network with 400ms RTT and 400kbps transfer speed) and under 2 seconds for repeat visits
   * Critical file size under 170Kb gzipped
+  
 * **Minified HTML**
+  
   Your HTML is minified.
+
 * **Lazy loading**
+  
   Images, scripts and CSS need to be lazy loaded to improve the response time of the current page (See details in their respective sections).
+
 * **Cookie size**
+  
   If you are using cookies be sure each cookie doesn't exceed 4096 bytes and your domain name doesn't have more than 20 cookies.
+
 * **Third party components**
+  
   Third party iframes or components relying on external JS (like sharing buttons) are replaced by static components when possible, thus limiting calls to external APIs and keeping your users activity private.
 
 ### SEO
@@ -148,7 +178,7 @@
 * Emacs
 * Brackets
 
-> 调试工具
+> Debugging Tools
 * Firebug/Firebug-lite/Web Inspector
 * YSlow/Smushit
 * IEDeveloperToolBar/IETester
