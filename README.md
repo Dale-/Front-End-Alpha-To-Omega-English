@@ -36,9 +36,9 @@
 6. **[Performance](#performance-1)**
 7. **[SEO](#seo)**
 8. **[Tools](#tools)**
-9. **[工程化](#tools)**
-10. **[测试](#tools)**
-11. **[小程序](#tools)**
+9. **[Engineering](#tools)**
+10. **[Test](#tools)**
+11. **[Mini Program](#tools)**
 
 ---
 
@@ -72,52 +72,54 @@
 
 ### JavaScript
 > Framework
-* React
-  * Redux
-  * Mobx
-* Vue
-  * VueX
-* AngularJS
+* [React](https://reactjs.org/)
+  * [Redux](https://redux.js.org/)
+  * [Mobx](https://mobx.js.org/README.html)
+* [Vue](https://vuejs.org/)
+  * [VueX](https://vuex.vuejs.org/)
+* [AngularJS](https://angularjs.org/)
   * RxJS
   * NgR
 
 
-### Security
-* CSRF/XSS
-* ADsafe/Caja/FBJS/Sandbox
-* HTTPS(每个页面和所有外部内容都使用HTTPS)
-* HTTP严格传输安全性(HSTS):HTTP头设置'Strict-Transport-Security'
-* 跨站点请求伪造攻击(CSRF):确保向服务器端发送的请求是合法的，并来自您的网站/应用程序，以防止发生CSRF攻击。
-* 跨站点脚本攻击(XSS):确保页面或网站没有XSS攻击的可能性
-* Content Type Options: 防止Google Chrome 和 Internet Explorer 尝试将响应的内容类型从服务器声明的内容类型中嗅探出来
-* X-Frame-Options (XFO)（外部框架连接设定） 保护网站的访问者免受劫持攻击。
-* Content Security Policy（内容安全策略） 定义内容如何加载到您的网站上的方式以及允许加载的位置。也可以用来防止劫持攻击。
+### [Security](https://github.com/thedaviddias/Front-End-Checklist#security)
+* **HTTPS**
+   HTTPS is used on every pages and for all external content (plugins, images...).
+* **HTTP Strict Transport Security (HSTS)**
+   The HTTP header is set to 'Strict-Transport-Security'.'Strict-Transport-Security'
+* **Cross Site Request Forgery (CSRF)**
+  You ensure that requests made to your server-side are legitimate and originate from your website / app to prevent CSRF attacks.
+* **Cross Site Scripting (XSS)**
+  Your page or website is free from XSS possible issues.
+* **Content Type Options**
+  Prevents Google Chrome and Internet Explorer from trying to mime-sniff the content-type of a response away from the one being declared by the server.
+* **X-Frame-Options (XFO)**
+  Protects your visitors against clickjacking attacks.
+* **Content Security Policy**
+  Defines how content is loaded on your site and from where it is permitted to be loaded. Can also be used to protect against clickjacking attacks.
 
 
 ### Performance
-* Concatenation(合并)
-* Minification(压缩)
-* Non-blocking(非阻塞)
-* 未使用的CSS
-* WebPagetest
-* ShowSlow/YSlow/34Rule
-* PageSpeed
-* HttpWatch
-* DynaTrace's Ajax
-* mod_pagespeed
-* PerfBudget
-* CriticalCSS
-* Picturefill
-* 减少请求数量（sprite、combo）
-* 善用缓存（application cache、http缓存、CDN、localstorage、sessionstorage，备忘录模式）
-* 减少选择器消耗（从右到左），减少DOM操作（DOM和JavaScript解释器的分离）
-* CSS的回流与重绘
-
-* 页面大小: 控制每张网页的大小在0到500KB之间。
-* 文件压缩: 压缩你的HTML文件。
-* 懒加载: 图片、js脚本和CSS需要懒加载，以提高当前页面的响应时间（请参见各自部分的详细信息）。
-* Cookie大小: 如果使用Cookie，确保每个Cookie不超过4096个字节，并且域名下不超过20个Cookie。
-* 第三方组件: 在可能的情况下，用静态组件替代依赖于外部JS的第三方iframe或组件（如共享按钮），从而限制对外部API的调用，并将用户活动保持为私有。
+* **Add long-term headers expiration dates**
+  Near-future headers expiration dates prevent effective caching and cause a repeat visit to your site from the device to be slower than necessary.
+* **Make fewer HTTP requests**  
+  Latency has a substantial impact on mobile application performance. Reducing the number of unique objects on the page will help reduce sensitivity to latency.
+* **Remove duplicate JavaScript and CSS**
+  Evaluating redundant scripts wastes time—and the duplicate parsing happens even if the script is cacheable. Duplicate scripts also waste mobile bandwidth.
+* **Avoid HTTP 404 (Not Found) error**  
+  Making an HTTP request and receiving a 404 (Not Found) error is expensive and degrades the user experience. Some sites have helpful 404 messages (for example, "Did you mean...?"), which may assist the user, but server resources are still wasted.
+* **Goals to achieve**
+  * First Meaningful Paint under 1 second
+  * Time To Interactive under 5 seconds for the "average" configuration (a $200 Android on a slow 3G network with 400ms RTT and 400kbps transfer speed) and under 2 seconds for repeat visits
+  * Critical file size under 170Kb gzipped
+* **Minified HTML**
+  Your HTML is minified.
+* **Lazy loading**
+  Images, scripts and CSS need to be lazy loaded to improve the response time of the current page (See details in their respective sections).
+* **Cookie size**
+  If you are using cookies be sure each cookie doesn't exceed 4096 bytes and your domain name doesn't have more than 20 cookies.
+* **Third party components**
+  Third party iframes or components relying on external JS (like sharing buttons) are replaced by static components when possible, thus limiting calls to external APIs and keeping your users activity private.
 
 ### SEO
 * Google Analytics
@@ -128,7 +130,7 @@
 * Sitemap HTML
 * Pagination link tags
 
-### Tools
+### Debugging Tools
 > Package Managers
 * npm
 * yarn
@@ -154,7 +156,7 @@
 * Fiddler/WireShark/tcpdump
 
 
-### 工程化
+### Engineering
 
 > Code Quality
 * JSCS
@@ -162,26 +164,28 @@
 * stylelint
 * htmlhint
 
-> 构建系统
+> Build System
 * webpack
 * gulp
 * grunt
 
-> 代码分析
+> Code Analysis
 * Code climate
 
-### 测试
-> 单元测试
+### Test
+> Unit Test
  * Jasmine
 * Mocha
 * Protractor
 * Karma
 * Jest
-> UI测试
-> 集成测试
-> 测试覆盖率
+> End to End Test
 
-### 小程序
+> Integration Test
+
+> Test Coverage
+
+### Mini Program
 * Taro
 * WePY
 * mpvue
